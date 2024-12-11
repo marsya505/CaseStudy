@@ -104,26 +104,23 @@ public class casestudy {
 
     static void AchievementAnalysisbyType() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("enter achievement type : ");
-        String achievemntType = sc.nextLine();
+        System.out.print("Enter achievement type : ");
+        String achievementType = sc.nextLine();
         System.out.println("--- ANALYST OF ACHIEVEMENT ---");
-        Boolean found = true;
+        Boolean found = false;
 
         for (int i = 0; i < nameStudent.length; i++) {
-            if (nameStudent[i][2].equals(achievemntType)) {
+            if (nameStudent[i][0] != null && nameStudent[i][2].equalsIgnoreCase(achievementType)) {
                 System.out.print("name : " + nameStudent[i][0] + " | ");
                 System.out.print("NIM : " + nameStudent[i][1] + " | ");
                 System.out.print("Level : " + nameStudent[i][3] + " | ");
                 System.out.print("Year : " + nameStudent[i][4] + " | ");
-
-                found = false;
                 System.out.println();
-                break;
+                found = true;
 
-            } else {
+            } if (!found) {
                 System.out.println("Achievement Type cannot found");
             }
-            break;
         }
     }
 }
