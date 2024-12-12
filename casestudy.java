@@ -86,7 +86,7 @@ public class casestudy {
 
         for (int i = 0; i < nameStudent.length; i++) {
             if (nameStudent[i][0] != null) {
-                hasData = true;
+                hasData = true; 
                 System.out.println("Student " + (i + 1) + ":");
                 System.out.println("Name: " + nameStudent[i][0]);
                 System.out.println("NIM: " + nameStudent[i][1]);
@@ -94,11 +94,10 @@ public class casestudy {
                 System.out.println("Level of Achievement: " + nameStudent[i][3]);
                 System.out.println("Year of Achievement: " + nameStudent[i][4]);
                 System.out.println("-----------------------------");
-
-            } else if (!hasData) {
-                System.out.println("No achievement data available.");
-
             }
+        }
+        if (!hasData) {
+            System.out.println("\nNo achievement data available.");
         }
     }
 
@@ -106,7 +105,7 @@ public class casestudy {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter achievement type : ");
         String achievementType = sc.nextLine();
-        System.out.println("--- ANALYST OF ACHIEVEMENT ---");
+        System.out.println("=== ANALYST OF ACHIEVEMENT ===");
         Boolean found = false;
 
         for (int i = 0; i < nameStudent.length; i++) {
@@ -117,10 +116,10 @@ public class casestudy {
                 System.out.print("Year : " + nameStudent[i][4] + " | ");
                 System.out.println();
                 found = true;
-
-            } if (!found) {
-                System.out.println("Achievement Type cannot found");
+                }
+            } 
+            if (!found) {
+                System.out.println("\nAchievement Type cannot found");
             }
         }
     }
-}
