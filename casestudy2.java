@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class casestudy2 {
 
     static String customer[][] = new String[100][7];
@@ -17,7 +16,8 @@ public class casestudy2 {
             switch (menu) {
                 case 1: inputList();   
                     break;
-                case 2: 
+                case 2: int grandTotal = calculateMenu(15000,22000, 12000, 18000);
+                System.out.println("total price : " + grandTotal);
                     break;
                 default:
                     break;
@@ -71,5 +71,29 @@ public class casestudy2 {
                     break;
                 }
             }          
-        }
+        }  
+        
+        static int calculateMenu(int icoffe, int ilatte, int iteh, int inoodles){
+        int allTotal = 0;
+        for (int i = 0; i < customer.length; i++){
+            int coffeQuantity = Integer.parseInt(customer[i][2]);
+            int totalCoffe = icoffe * coffeQuantity;
+            customer[i][2] = String.valueOf(totalCoffe);
+            
+            int latteQuantity = Integer.parseInt(customer[i][3]);
+            int totalLatte = ilatte * latteQuantity;
+            customer[i][3] = String.valueOf(totalLatte);
+
+            int tehQuantity = Integer.parseInt(customer[i][4]);
+            int totalTeh = iteh * tehQuantity;
+            customer[i][4] = String.valueOf(totalTeh);
+
+            int noodlesQuantity = Integer.parseInt(customer[i][5]);
+            int totalNoodles = inoodles * noodlesQuantity;
+            customer[i][5] = String.valueOf(totalNoodles);
+
+             allTotal += totalCoffe + totalLatte + totalTeh + totalNoodles;
+        } 
+        return allTotal;
+    }
 }
